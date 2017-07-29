@@ -1,0 +1,23 @@
+.container {
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+body {
+  background: #008080;
+}
+.weather h2 {
+  border-bottom: solid 2px black;
+}
+.weather h3 {
+  text-transform: uppercase;
+}
+.weather {
+  padding: 50px;
+}
+.weather  {
+  border-bottom: 2px solid #fff;
+}
+h1,h2,h3 {
+  text-shadow:2px 2px 2px #000;
+}
