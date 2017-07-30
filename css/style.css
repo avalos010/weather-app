@@ -22,3 +22,6 @@ h1,h2,h3 {
   text-shadow:2px 2px 2px #fff;
   text-align: center;
 }
+.weather img {
+ width: 250px; 
+}
