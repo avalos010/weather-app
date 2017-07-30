@@ -1,6 +1,5 @@
 .container {
-  margin: 0 auto;
-  text-align: center;
+  margin: auto;
   color: #fff;
 }
 body {
@@ -17,7 +16,9 @@ body {
 }
 .weather  {
   border-bottom: 2px solid #fff;
+  text-align: center;
 }
 h1,h2,h3 {
   text-shadow:2px 2px 2px #fff;
+  text-align: center;
 }
