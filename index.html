@@ -1,22 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Weather App by JLuis Avalos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1>
-<link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-  <div class="container">
-  <h1> Simple Weather App By JLuis Avalos </h1>
-  <div class="weather">
-    
+<body class="bg-gradient-to-br from-blue-400 via-blue-500 to-purple-600 min-h-screen font-['Inter']">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-2xl">
+        <i class="fas fa-cloud-sun text-yellow-300 mr-4"></i>
+        Weather App
+      </h1>
+      <p class="text-xl text-blue-100 font-light">By JLuis Avalos</p>
+    </div>
+
+    <!-- Main Weather Card -->
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/30 p-8 md:p-12">
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-16">
+          <div class="inline-block animate-spin rounded-full h-16 w-16 border-b-4 border-white"></div>
+          <p class="text-white text-xl mt-4 font-medium">Getting your weather...</p>
+        </div>
+
+        <!-- Weather Content -->
+        <div id="weather-content" class="hidden">
+          <!-- Location and Current Weather -->
+          <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+            <div class="text-center md:text-left">
+              <h2 id="location" class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg"></h2>
+              <p id="current-date" class="text-blue-100 text-lg font-medium"></p>
+            </div>
+            <div class="text-center">
+              <div id="weather-icon" class="text-8xl mb-4 drop-shadow-2xl"></div>
+              <h3 id="weather-description" class="text-2xl font-semibold text-white mb-2 capitalize"></h3>
+            </div>
+          </div>
+
+          <!-- Temperature Display -->
+          <div class="text-center mb-8">
+            <div class="bg-white/30 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <p class="text-blue-100 text-lg font-medium mb-2">Current Temperature</p>
+              <div class="flex justify-center items-baseline gap-4">
+                <span id="temp-fahrenheit" class="text-6xl md:text-7xl font-bold text-white drop-shadow-lg"></span>
+                <span id="temp-celsius" class="text-3xl md:text-4xl font-medium text-blue-100"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Weather Info -->
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
+              <i class="fas fa-thermometer-half text-3xl text-yellow-300 mb-3"></i>
+              <p class="text-blue-100 text-sm font-medium mb-1">Feels Like</p>
+              <p id="feels-like" class="text-2xl font-bold text-white"></p>
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
+              <i class="fas fa-tint text-3xl text-blue-300 mb-3"></i>
+              <p class="text-blue-100 text-sm font-medium mb-1">Humidity</p>
+              <p id="humidity" class="text-2xl font-bold text-white"></p>
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
+              <i class="fas fa-wind text-3xl text-gray-300 mb-3"></i>
+              <p class="text-blue-100 text-sm font-medium mb-1">Wind Speed</p>
+              <p id="wind-speed" class="text-2xl font-bold text-white"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="hidden text-center py-16">
+          <i class="fas fa-exclamation-triangle text-6xl text-red-300 mb-4"></i>
+          <p class="text-white text-xl font-medium mb-4">Unable to get weather data</p>
+          <button onclick="getWeather()" class="bg-white/20 hover:bg-white/30 text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 border border-white/30">
+            Try Again
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-12">
+      <p class="text-blue-100 text-sm">
+        <i class="fas fa-map-marker-alt mr-2"></i>
+        Using your current location
+      </p>
+    </div>
   </div>
-</div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
-
+  <script src="js/index.js"></script>
 </body>
 </html>
